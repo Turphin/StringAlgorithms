@@ -7,7 +7,12 @@ public class StringAlgorithms {
      */
     public static String printCharacters(String word) {
         // TODO: Implement this method
-        return "";
+        String result = "";
+        for (int i = 0; i < word.length(); i++) {
+         String ins = word.substring(i,i+1);
+         result += ins + "\n";
+        }
+        return result;
     }
 
 
@@ -18,7 +23,12 @@ public class StringAlgorithms {
      */
     public static String reverseWord(String word) {
         // TODO: Implement this method
-        return "";
+        String result = "";
+        for (int i = word.length(); i > 0; i++) {
+         String ins = word.substring(i-1, i);
+         result += ins;
+        }
+        return result;
     }
 
 
@@ -29,6 +39,10 @@ public class StringAlgorithms {
      */
     public static String capitalizeString(String sentence) {
         // TODO: Implement this method
+        String result = sentence;
+        //while (false) {
+         
+        //}
         return "";
     }
 
@@ -66,22 +80,22 @@ public class StringAlgorithms {
         
         System.out.println("Testing printCharacters:");
         // Example:
-        // System.out.println(printCharacters("hello"));
+        System.out.println(printCharacters("hello"));
 
         System.out.println("\nTesting reverseWord:");
         // Example:
-        // System.out.println(reverseWord("hello"));
+        System.out.println(reverseWord("hello"));
 
         System.out.println("\nTesting capitalizeString:");
         // Example:
-        // System.out.println(capitalizeString("the quick brown fox"));
+        System.out.println(capitalizeString("the quick brown fox"));
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
-        // System.out.println(detectPalindrome("racecar"));
+        System.out.println(detectPalindrome("racecar"));
 
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
-        // System.out.println(firstUniqueChar("swiss"));
+        System.out.println(firstUniqueChar("swiss"));
     }
 }
