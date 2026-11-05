@@ -24,7 +24,7 @@ public class StringAlgorithms {
     public static String reverseWord(String word) {
         // TODO: Implement this method
         String result = "";
-        for (int i = word.length(); i > 0; i++) {
+        for (int i = word.length(); i > 0; i--) {
          String ins = word.substring(i-1, i);
          result += ins;
         }
@@ -39,11 +39,14 @@ public class StringAlgorithms {
      */
     public static String capitalizeString(String sentence) {
         // TODO: Implement this method
-        String result = sentence;
-        //while (false) {
-         
-        //}
-        return "";
+        String result = sentence.substring(0,1).toUpperCase() + sentence.substring(1);
+        String tracker = sentence;
+        while (tracker.indexOf(" ") != -1) {
+            int i = tracker.indexOf(" ") + 1;
+            result = result.substring(0,i) + result.substring(i,i+1).toUpperCase() + result.substring(i+1);
+            tracker = tracker.substring(0,i-1) + "_" + tracker.substring(i);
+        }
+        return result;
     }
 
 
@@ -54,7 +57,14 @@ public class StringAlgorithms {
      */
     public static boolean detectPalindrome(String word) {
         // TODO: Implement this method
-        return false;
+        boolean result;
+        String fwStr = word.toLowerCase();
+        String revStr = "";
+        for (int i = fwStr.length(); i > 0; i--) {
+            revStr += fwStr.substring(i-1,i);
+        }
+        result = fwStr.equals(revStr);
+        return result;
     }
 
 
@@ -66,7 +76,9 @@ public class StringAlgorithms {
      */
     public static char firstUniqueChar(String word) {
         // TODO: Implement this method
-        return ' ';
+        char result = ' ';
+        
+        return result;
     }
 
 
