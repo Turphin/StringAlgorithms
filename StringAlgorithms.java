@@ -77,7 +77,21 @@ public class StringAlgorithms {
     public static char firstUniqueChar(String word) {
         // TODO: Implement this method
         char result = ' ';
-        
+        for (int i = 0; i < word.length(); i++) {
+            int counter = 0;
+            String letter = word.substring(i,i+1);
+            for (int j = 0; j < word.length(); j++) {
+                System.out.println(word.substring(j,j+1) + " ?= " + letter);
+                if (word.substring(j,j+1).equals(letter)) {
+                    counter++;
+                }
+            }
+            System.out.println(letter + ", " + counter);
+            if (counter == 1) {
+                result = letter.charAt(0);
+                break;
+            }
+        }
         return result;
     }
 
